@@ -43,16 +43,66 @@ PROCEDURE
 •	If any Error, correct it in code and execute again
 •	Verify the generated waveform using Tabulation and Model Waveform
 
+
+
 Model Waveform
+
+
+
 
 <img width="703" height="679" alt="image" src="https://github.com/user-attachments/assets/e7c7c7f8-ccf2-41ac-b1f3-325989941a6f" />
 
+
+
+
 Program
+
+
+
+Am = 6.2;
+fm = 474;
+Ac = 12.4;
+fc = 4740;
+fs = 47400;
+t = 0:1/fs:3/fm;
+m = Am*cos(2*3.14*fm*t);
+subplot(3,1,1);
+plot(t,m);
+title('Message Signal');
+c = Ac*cos(2*3.14*fc*t);
+subplot(3,1,2);
+plot(t,c);
+title('Carrier Signal');
+s1=(Ac+m).* cos(2*3.14*fc*t);
+s2=(Ac-m).* cos(2*3.14*fc*t);
+s = s1-s2;
+subplot(3,1,3);
+plot(t,s);
+title('DSBSC Modulated Signal');
+
+
+
+
+
 
 Output Graph
 
 
+
+<img width="610" height="460" alt="image" src="https://github.com/user-attachments/assets/1a250787-554a-4ca6-8fd2-b9c2c9554e35" />
+
+
+
+
+
 Tablular Column
+
+
+
+![WhatsApp Image 2025-08-19 at 12 03 12 (1)](https://github.com/user-attachments/assets/c7ef9e8e-91d9-4c76-8f0b-104515ece563)
+
+
+
 
 
 Result

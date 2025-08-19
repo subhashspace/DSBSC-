@@ -32,6 +32,9 @@ Algorithm:
 •	Low-pass Filtering: Apply a Butterworth low-pass filter to remove the high- frequency components and recover the original message signal.
 5.	Visualization:
 Plot the message signal, carrier signal, DSBSC modulated signal, and the recovered signal after demodulation.
+
+
+
 PROCEDURE
 
 •	Refer Algorithms and write code for the experiment.
@@ -60,24 +63,43 @@ Program
 
 
 Am = 6.2;
+
 fm = 474;
+
 Ac = 12.4;
+
 fc = 4740;
+
 fs = 47400;
+
 t = 0:1/fs:3/fm;
+
 m = Am*cos(2*3.14*fm*t);
+
 subplot(3,1,1);
+
 plot(t,m);
+
 title('Message Signal');
+
 c = Ac*cos(2*3.14*fc*t);
+
 subplot(3,1,2);
+
 plot(t,c);
+
 title('Carrier Signal');
+
 s1=(Ac+m).* cos(2*3.14*fc*t);
+
 s2=(Ac-m).* cos(2*3.14*fc*t);
+
 s = s1-s2;
+
 subplot(3,1,3);
+
 plot(t,s);
+
 title('DSBSC Modulated Signal');
 
 
